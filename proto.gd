@@ -13,6 +13,39 @@ var current_turn
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	var licence = ''
+	licence += Engine.get_license_text()
+	
+	licence +='\n\n\n\n ---------------------- \n\n\n\n'
+	
+	#print(Engine.get_license_info())
+	#licence +=Engine.get_license_info()
+	#for keys in Engine.get_license_info():
+		
+		#licence += keys
+		#licence +='\n\n\n\n\n\n'
+		#licence += Engine.get_license_info()[keys]
+		#licence +='\n\n\n\n\n\n'
+	
+	var cop_info = Engine.get_copyright_info()
+#	var i = 0
+	
+	licence +='\n\n\n SEPARATOR \n\n\n'
+	
+	for item in cop_info:
+		for keys in item:
+			
+			licence +='\n\n\n\n\n\n\n\n\n'
+	
+			licence +=keys
+			licence +='\n\n\n\n\n\n'
+	
+			licence  += str(item[keys])
+		
+		#i+=1
+	
+	var file = FileAccess.open("res://licence.txt", FileAccess.WRITE)
+	file.store_string(licence)
 	
 	new_game()
 	

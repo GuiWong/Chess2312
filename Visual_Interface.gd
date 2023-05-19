@@ -137,6 +137,49 @@ func switch_piece(o,d):
 func push_piece(o,d):
 	
 	var dir = d-o
+	var queue = []
+	var targets = []
+	#var done = false
+	#queue.append( get_piece_form_pos(o))
+	var next = get_piece_form_pos(o)
+	var dist = 1
+	
+	reset_active_piece()
+	
+	while next != null:
+		
+		queue.append(next)
+		var tar = o + dir * dist
+		targets.append(tar)
+		next = get_piece_form_pos(tar)
+		
+		
+		dist += 1
+		
+	var start_pos =[]
+	for j in queue:
+		
+		start_pos.append(j.position)
+		
+	while queue[0].position.distance_to(targets[0] * 24) >= 4:
+		
+		for i in range(queue.size()):
+			
+			queue[i].position = lerp(queue[i].position,targets[i] * 24,0.2 + 0.1 * i)#queue[i].position + dir.normalized() * (3 + i)
+	
+		await(get_tree().create_timer(0.03).timeout)
+		
+	print ("loop finished")
+		
+	for j in range(queue.size()):
+		
+		queue[j].position =targets[j] * 24
+		
+	#reset_active_piece()
+	
+func push_piece_old(o,d):
+	
+	var dir = d-o
 	#var done = false
 	var current = get_piece_form_pos(o)
 	var next
@@ -150,7 +193,7 @@ func push_piece(o,d):
 		
 		dist += 1
 		
-	reset_active_piece()
+	reset_active_piece()	
 	
 func get_piece_form_pos(pos):
 	

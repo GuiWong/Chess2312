@@ -11,6 +11,8 @@ func _ready():
 	$Resolution_Placeholder/Res2.connect("pressed",set_resolution_2)
 	$Resolution_Placeholder/Res3.connect("pressed",set_resolution_3)
 	$Resolution_Placeholder/Res4.connect("pressed",set_lang_fr)
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
