@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx25yh64q2tdy"]
+
+[ext_resource type="Script" path="res://Test_perrsp.gd" id="1_63718"]
+[ext_resource type="PackedScene" uid="uid://7tv7gw5eu30t" path="res://board.tscn" id="2_0tm5i"]
+[ext_resource type="Texture2D" uid="uid://blp2bjhtieanx" path="res://Ressources/pieces.png" id="3_y6dsi"]
+[ext_resource type="PackedScene" uid="uid://bg3n2kw6al0ar" path="res://proto.tscn" id="4_51thf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mlf57"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Test_perrsp" type="Node3D"]
+script = ExtResource("1_63718")
+
+[node name="Board" parent="." instance=ExtResource("2_0tm5i")]
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+axis = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_mlf57")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 192)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.09, 0.12)
+sorting_offset = 20.0
+pixel_size = 0.015
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_y6dsi")
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.09, -0.12)
+sorting_offset = 20.0
+pixel_size = 0.015
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_y6dsi")
+hframes = 6
+vframes = 2
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.09, -0.12)
+sorting_offset = 20.0
+pixel_size = 0.015
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_y6dsi")
+hframes = 6
+vframes = 2
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, 0.09, 0.36)
+sorting_offset = 20.0
+modulate = Color(0, 0, 0, 1)
+pixel_size = 0.015
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_y6dsi")
+hframes = 6
+vframes = 2
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.126, 0.12)
+visible = false
+pixel_size = 0.015
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_y6dsi")
+hframes = 6
+vframes = 2
+frame = 7
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Proto" parent="SubViewport" instance=ExtResource("4_51thf")]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.951423, 0.307888, 0, -0.307888, 0.951423, 0, 0.594637, 1.5623)

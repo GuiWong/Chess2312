@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=3 uid="uid://4xsc8stkxvng"]
+
+[ext_resource type="Script" path="res://Ui/Menu/main_menu.gd" id="1_u5qk3"]
+[ext_resource type="PackedScene" uid="uid://btfpaeecbeyu0" path="res://Ui/Menu/window.tscn" id="1_uyx10"]
+[ext_resource type="PackedScene" uid="uid://denic54dvwv1u" path="res://Ui/Menu/button_menu_proto.tscn" id="2_3m5n6"]
+[ext_resource type="PackedScene" uid="uid://c2xyo8g580b7r" path="res://Ui/Menu/version_print.tscn" id="4_a44vx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4loju"]
+font_size = 36
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.290196)
+shadow_offset = Vector2(6, 6)
+
+[sub_resource type="Animation" id="Animation_ek70m"]
+resource_name = "title_bounce"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(136, 55), Vector2(136, 45), Vector2(136, 55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:label_settings:shadow_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(6, 6), Vector2(6, 16), Vector2(6, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_1xtdl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(136, 45)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:label_settings:shadow_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ixcky"]
+_data = {
+"RESET": SubResource("Animation_1xtdl"),
+"title_bounce": SubResource("Animation_ek70m")
+}
+
+[node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_u5qk3")
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(240, 135)
+
+[node name="Window" parent="Center" instance=ExtResource("1_uyx10")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_Menu_proto" parent="Center/Window" instance=ExtResource("2_3m5n6")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 45.0
+offset_right = 332.0
+offset_bottom = 98.0
+rotation = -0.160588
+text = "Chess 2312"
+label_settings = SubResource("LabelSettings_4loju")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ixcky")
+}
+
+[node name="Resolution_Placeholder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Res1" type="Button" parent="Resolution_Placeholder"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 32.0
+offset_right = 93.0
+offset_bottom = 63.0
+text = "480 x 270"
+
+[node name="Res2" type="Button" parent="Resolution_Placeholder"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 76.0
+offset_right = 108.0
+offset_bottom = 107.0
+text = "960 x 540"
+
+[node name="Res3" type="Button" parent="Resolution_Placeholder"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 119.0
+offset_right = 88.0
+offset_bottom = 150.0
+text = "1440 X 810"
+
+[node name="Res4" type="Button" parent="Resolution_Placeholder"]
+visible = false
+layout_mode = 0
+offset_left = 353.0
+offset_top = 119.0
+offset_right = 444.0
+offset_bottom = 150.0
+text = "English"
+
+[node name="Label" type="Label" parent="Resolution_Placeholder"]
+layout_mode = 0
+offset_right = 145.0
+offset_bottom = 26.0
+text = "Change Resolution"
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Version_print" parent="UI" instance=ExtResource("4_a44vx")]
+layout_mode = 1
+offset_left = -101.0

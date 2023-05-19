@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1hwg83wuro26"]
+
+[ext_resource type="PackedScene" uid="uid://d0uofxje3m6pj" path="res://Ui/text_box.tscn" id="1_oqrj8"]
+[ext_resource type="Texture2D" uid="uid://dmkrcor3ckm0r" path="res://Ressources/Tiles2.png" id="2_56om4"]
+[ext_resource type="Texture2D" uid="uid://dmeax7ka8gdpx" path="res://Ressources/Icons-Essentials.png" id="3_hequt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ke5y"]
+line_spacing = 0.0
+
+[node name="Text_Box_2" instance=ExtResource("1_oqrj8")]
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." index="0"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 280.0
+offset_bottom = 92.0
+texture = ExtResource("2_56om4")
+region_rect = Rect2(0, 0, 24, 24)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect" parent="." index="1"]
+texture = ExtResource("3_hequt")
+draw_center = false
+region_rect = Rect2(32, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" parent="." index="2"]
+custom_minimum_size = Vector2(270, 88)
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 280.0
+offset_bottom = 94.0
+text = "You are Playing a Prototype
+All feedback is welcome
+Have Fun"
+label_settings = SubResource("LabelSettings_6ke5y")
+vertical_alignment = 0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4k623v338bna"]
+
+[ext_resource type="Script" path="res://Visual_board.gd" id="1_al8ro"]
+[ext_resource type="PackedScene" uid="uid://7tv7gw5eu30t" path="res://board.tscn" id="2_a4taq"]
+
+[node name="Visual_board" type="Node2D"]
+script = ExtResource("1_al8ro")
+
+[node name="Board" parent="." instance=ExtResource("2_a4taq")]
+
+[node name="Tiles" type="Node2D" parent="."]
+position = Vector2(12, 12)
+
+[node name="Pieces" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(12, 12)
+
+[node name="Ui" type="Node2D" parent="."]
+position = Vector2(12, 12)
+
+[node name="Ui2" type="Node2D" parent="."]
+position = Vector2(12, 12)

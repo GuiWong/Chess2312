@@ -1,0 +1,32 @@
+keys,en,fr
+TEST_STR,this is a test,ceci est un test
+TEST_STR2,"this test has, comma","test avec, virgule"
+TEST_STR3,this one \n a  line break,et lui un \n retour à la ligne
+NEW_GAME,new game,nouvelle partie
+LOAD_GAME,Load game,charger partie
+TUTORIAL,tutorial,tutoriel
+SETTINGS,settings,options
+PROTO_TEXT,You are Playing a Prototype \n All feedback is welcome \n Have Fun,Vous Jouez à un prototype \n tous les retours sont bienvenus \n Amusez vous
+TUTO_INTRO,"Each Turn, you will get a \n random piece to place. \n Press [enter] or click on the \n arrow to proceed.","Each Turn, you will get a \n random piece to place. \n Press [enter] or click on the \n arrow to proceed."
+TUTO_PLACEMENT,You can only place a piece on a \n tile of the opposite color. \n click on the tile where the \n arrow point to place the PAWN,You can only place a piece on a \n tile of the opposite color. \n click on the tile where the \n arrow point to place the PAWN
+TUTO_RANGE,"Once you played a piece, \n you can only play in range \n of an already placed piece. \n Place the TOWER where showed.","Once you played a piece, \n you can only play in range \n of an already placed piece. \n Place the TOWER where showed."
+TUTO_OVERLAY,Click on this button or press \n space to activate the pattern \n score overlay,Click on this button or press \n space to activate the pattern \n score overlay
+TUTO_TOWER_BONUS,The TOWER scores 2 points for \n each PAWN next to it \n  \n [enter] or arrow to proceed,The TOWER scores 2 points for \n each PAWN next to it \n  \n [enter] or arrow to proceed
+TUTO_HORSE_BONUS,the DOG scores 1 points for \n each empty space next to it \n including diagonals \n Place the DOG where showed.,the DOG scores 1 points for \n each empty space next to it \n including diagonals \n Place the DOG where showed.
+TUTO_EFFECT_INTRO,Some pieces have an effect \n that triggers when placing \n a piece next to it. \n Place the PAWN where showed.,Some pieces have an effect \n that triggers when placing \n a piece next to it. \n Place the PAWN where showed.
+TUTO_HORSE_EFFECT,"When triggered, the DOG can \n move to a nearby empty tile. \n Move the DOG where showed. ","When triggered, the DOG can \n move to a nearby empty tile. \n Move the DOG where showed. "
+TUTO_COLOR_UI,"There is another overlay, \n click on this button to \n activate it, or cycle through \n all overlays with [space]","There is another overlay, \n click on this button to \n activate it, or cycle through \n all overlays with [space]"
+TUTO_COLOR_BONUS_INTRO,"Every group of same-color, \n adjacent pieces scores point. \n  \n [enter] to proceed","Every group of same-color, \n adjacent pieces scores point. \n  \n [enter] to proceed"
+TUTO_BISHOP_BONUS,"You Have to play a BISHOP, it \n scores 2 points for each PAWN \n diagonally adjacent. \n Place the BISHOP where showed.","You Have to play a BISHOP, it \n scores 2 points for each PAWN \n diagonally adjacent. \n Place the BISHOP where showed."
+TUTO_MANDATORY_EFFECT,An inportant rule of chess \n since 1312 is that every effect \n has to be played if possible. \n Move the DOG where showed.,An inportant rule of chess \n since 1312 is that every effect \n has to be played if possible. \n Move the DOG where showed.
+TUTO_FUN_FACT1,[COMING UP IN NEXT VERSION] \n  \n  \n place the PAW where showed.,[COMING UP IN NEXT VERSION] \n  \n  \n place the PAW where showed.
+TUTO_BISHOP_EFFECT,"When triggered, the BISHOP \n switch it's position with any \n neighbor, including diagonally \n Click on the TOWER tile.","When triggered, the BISHOP \n switch it's position with any \n neighbor, including diagonally \n Click on the TOWER tile."
+TUTO_COLOR_GROUP_SCALING,"Points scored by each members of \n color-group increase as the \n size of the group grows. \n Starting with 2 members, ...","Points scored by each members of \n color-group increase as the \n size of the group grows. \n Starting with 2 members, ..."
+TUTO_COLOR_GROUP_SCALING2,"...  points goes as follows: \n [2,4,7,11,16,..] and +5 for each \n additional piece. \n [enter] to proceed","...  points goes as follows: \n [2,4,7,11,16,..] and +5 for each \n additional piece. \n [enter] to proceed"
+TUTO_QUEEN_BONUS,"The QUEEN is very usefull, \n we will talk about it's scoring \n pattern later. For now, \n place it where showed.","The QUEEN is very usefull, \n we will talk about it's scoring \n pattern later. For now, \n place it where showed."
+TUTO_FUN_FACT2,[COMING UP IN NEXT VERSION] \n  \n  \n place the PAW where showed.,[COMING UP IN NEXT VERSION] \n  \n  \n place the PAW where showed.
+TUTO_EFFECT_ORDER,"When you trigger more than \n 1 effect, you can cycle trough \n activated pieces with [tab] or \n this button. Solve both effects.","When you trigger more than \n 1 effect, you can cycle trough \n activated pieces with [tab] or \n this button. Solve both effects."
+TUTO_FUN_FACT3,"[COMING UP IN NEXT VERSION] \n  \n Let's activate that QUEEN, \n place the PAW where showed.","[COMING UP IN NEXT VERSION] \n  \n Let's activate that QUEEN, \n place the PAW where showed."
+TUTO_QUEEN_EFFECT,"When triggered, the QUEEN \n push an entire line. It needs \n to have an adjacent piece, and \n a free spot for the line to go.","When triggered, the QUEEN \n push an entire line. It needs \n to have an adjacent piece, and \n a free spot for the line to go."
+TUTO_KING_EFFECT,"The KING has a special placement \n rule, it replace any piece on \n the board. The piece return to \n the bag and will be picked later","The KING has a special placement \n rule, it replace any piece on \n the board. The piece return to \n the bag and will be picked later"
+TUTO_KING_BONUS,KING and QUEEN score 5 points  \n for each adjacent KING or QUEEN ,KING and QUEEN score 5 points  \n for each adjacent KING or QUEEN 

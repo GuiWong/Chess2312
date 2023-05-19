@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp7k2h4l04kwv"]
+
+[ext_resource type="Shader" path="res://Ui/move_shower.gdshader" id="1_rsga0"]
+[ext_resource type="Texture2D" uid="uid://c25urf06u3mtv" path="res://Ressources/monochrome-transparent_packed.png" id="1_ta3op"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h742t"]
+shader = ExtResource("1_rsga0")
+
+[node name="Move_Shower" type="Node2D"]
+
+[node name="Move" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_h742t")
+position = Vector2(0, -12)
+texture = ExtResource("1_ta3op")
+region_enabled = true
+region_rect = Rect2(384, 192, 16, 16)
+
+[node name="Move2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -12)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_ta3op")
+region_enabled = true
+region_rect = Rect2(384, 192, 16, 16)
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="S_1" type="Sprite2D" parent="Node2D"]
+self_modulate = Color(0, 0.47451, 0.737255, 1)
+position = Vector2(0, -16)
+texture = ExtResource("1_ta3op")
+region_enabled = true
+region_rect = Rect2(384, 192, 16, 16)
+
+[node name="S_2" type="Sprite2D" parent="Node2D"]
+self_modulate = Color(0, 0.47451, 0.737255, 1)
+position = Vector2(0, -8)
+rotation = 3.14159
+texture = ExtResource("1_ta3op")
+region_enabled = true
+region_rect = Rect2(384, 192, 16, 16)
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Move2" type="Sprite2D" parent="Node2D2"]
+visible = false
+position = Vector2(0, -12)
+texture = ExtResource("1_ta3op")
+region_enabled = true
+region_rect = Rect2(368, 320, 16, 16)
+
+[node name="Move3" type="Sprite2D" parent="Node2D2"]
+visible = false
+self_modulate = Color(0, 0.47451, 0.737255, 1)
+position = Vector2(0, -36)
+texture = ExtResource("1_ta3op")
+region_enabled = true
+region_rect = Rect2(368, 320, 16, 16)

@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0uofxje3m6pj"]
+
+[ext_resource type="Script" path="res://Ui/text_box.gd" id="1_61sw0"]
+[ext_resource type="Texture2D" uid="uid://dmkrcor3ckm0r" path="res://Ressources/Tiles2.png" id="1_pbbvd"]
+[ext_resource type="Texture2D" uid="uid://drexcacs3lnsh" path="res://Ressources/next2.png" id="3_fcnp2"]
+[ext_resource type="Texture2D" uid="uid://bh14hmvrfxf1t" path="res://Ressources/next.png" id="4_7bkhr"]
+
+[node name="Text_Box" type="Control"]
+custom_minimum_size = Vector2(284, 96)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1156.0
+offset_bottom = -714.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("1_61sw0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 284.0
+offset_bottom = 96.0
+texture = ExtResource("1_pbbvd")
+region_rect = Rect2(0, 0, 24, 24)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "This is Some Text "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 72.0
+offset_right = 292.0
+offset_bottom = 96.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_fcnp2")
+texture_hover = ExtResource("4_7bkhr")

@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://be4cmng3h0sma"]
+
+[ext_resource type="Script" path="res://Ui/color_score.gd" id="1_mjf7r"]
+[ext_resource type="Texture2D" uid="uid://drxhys0q4xul6" path="res://Ressources/Color_connect.png" id="1_uc08p"]
+[ext_resource type="Shader" path="res://Ui/Color_Link.gdshader" id="2_fxi8d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2rvr"]
+shader = ExtResource("2_fxi8d")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0l1fn"]
+texture = ExtResource("1_uc08p")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:0/0/terrains_peering_bit/top_side = 0
+1:0/next_alternative_id = 4
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/1 = 1
+1:0/1/flip_v = true
+1:0/1/transpose = true
+1:0/1/terrain_set = 0
+1:0/1/terrain = 0
+1:0/1/terrains_peering_bit/right_side = 0
+1:0/1/terrains_peering_bit/left_side = 0
+1:0/1/terrains_peering_bit/top_side = 0
+1:0/2 = 2
+1:0/2/flip_h = true
+1:0/2/terrain_set = 0
+1:0/2/terrain = 0
+1:0/2/terrains_peering_bit/bottom_side = 0
+1:0/2/terrains_peering_bit/left_side = 0
+1:0/2/terrains_peering_bit/top_side = 0
+1:0/3 = 3
+1:0/3/transpose = true
+1:0/3/terrain_set = 0
+1:0/3/terrain = 0
+1:0/3/terrains_peering_bit/right_side = 0
+1:0/3/terrains_peering_bit/bottom_side = 0
+1:0/3/terrains_peering_bit/left_side = 0
+2:0/next_alternative_id = 4
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/right_side = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/1 = 1
+2:0/1/flip_h = true
+2:0/1/terrain_set = 0
+2:0/1/terrain = 0
+2:0/1/terrains_peering_bit/bottom_side = 0
+2:0/1/terrains_peering_bit/left_side = 0
+2:0/2 = 2
+2:0/2/flip_v = true
+2:0/2/terrain_set = 0
+2:0/2/terrain = 0
+2:0/2/terrains_peering_bit/right_side = 0
+2:0/2/terrains_peering_bit/top_side = 0
+2:0/3 = 3
+2:0/3/flip_h = true
+2:0/3/flip_v = true
+2:0/3/terrain_set = 0
+2:0/3/terrain = 0
+2:0/3/terrains_peering_bit/left_side = 0
+2:0/3/terrains_peering_bit/top_side = 0
+0:1/next_alternative_id = 3
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/1 = 1
+0:1/1/transpose = true
+0:1/1/terrain_set = 0
+0:1/1/terrain = 0
+0:1/1/terrains_peering_bit/right_side = 0
+0:1/1/terrains_peering_bit/left_side = 0
+0:1/2 = 2
+1:1/next_alternative_id = 4
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/1 = 1
+1:1/1/flip_v = true
+1:1/1/terrain_set = 0
+1:1/1/terrain = 0
+1:1/1/terrains_peering_bit/bottom_side = 0
+1:1/2 = 2
+1:1/2/transpose = true
+1:1/2/terrain_set = 0
+1:1/2/terrain = 0
+1:1/2/terrains_peering_bit/left_side = 0
+1:1/3 = 3
+1:1/3/flip_h = true
+1:1/3/transpose = true
+1:1/3/terrain_set = 0
+1:1/3/terrain = 0
+1:1/3/terrains_peering_bit/right_side = 0
+
+[sub_resource type="TileSet" id="TileSet_jw7x4"]
+tile_size = Vector2i(24, 24)
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "Color_Group"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/1 = SubResource("TileSetAtlasSource_0l1fn")
+
+[node name="Color_Score" type="Node2D"]
+script = ExtResource("1_mjf7r")
+
+[node name="TileMap" type="TileMap" parent="."]
+material = SubResource("ShaderMaterial_a2rvr")
+tile_set = SubResource("TileSet_jw7x4")
+format = 2
+
+[node name="Blobs" type="Node2D" parent="."]
+z_index = 5

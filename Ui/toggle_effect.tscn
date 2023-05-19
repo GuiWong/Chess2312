@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://db00p3y5yjp30"]
+
+[ext_resource type="Texture2D" uid="uid://dus12fu0sxksq" path="res://Ressources/Ui/buton_9.png" id="1_5lnhx"]
+[ext_resource type="Texture2D" uid="uid://y6tjo56trvib" path="res://Ressources/Ui/buton_8.png" id="2_rtu5j"]
+[ext_resource type="Texture2D" uid="uid://dt1qo6sgwkyej" path="res://Ressources/Ui/buton_10.png" id="3_0wdyw"]
+
+[node name="Toggle_Effect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_5lnhx")
+texture_hover = ExtResource("2_rtu5j")
+texture_disabled = ExtResource("3_0wdyw")

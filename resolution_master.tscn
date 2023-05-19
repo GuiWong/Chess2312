@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkex2dkqbnaxu"]
+
+[ext_resource type="Script" path="res://resolution_master.gd" id="1_13w47"]
+[ext_resource type="PackedScene" uid="uid://bg3n2kw6al0ar" path="res://proto.tscn" id="1_ypusn"]
+[ext_resource type="Texture2D" uid="uid://dj4jmhheb7yq0" path="res://Ressources/Black_Strips.png" id="2_k5piv"]
+
+[node name="Resolution_master" type="Node2D"]
+script = ExtResource("1_13w47")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_k5piv")
+centered = false
+offset = Vector2(-240, -135)
+
+[node name="Proto" parent="Node2D" instance=ExtResource("1_ypusn")]

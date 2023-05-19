@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2xyo8g580b7r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ufkma"]
+font_size = 8
+
+[node name="Version_print" type="Label"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+text = "Prototype v0.0.1.0"
+label_settings = SubResource("LabelSettings_ufkma")
+horizontal_alignment = 2
+vertical_alignment = 2

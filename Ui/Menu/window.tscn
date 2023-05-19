@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://btfpaeecbeyu0"]
+
+[ext_resource type="Shader" path="res://Ui/Menu/window.gdshader" id="1_6yp0t"]
+[ext_resource type="Script" path="res://Ui/Menu/window.gd" id="1_qmutq"]
+[ext_resource type="Texture2D" uid="uid://c5yi4jiyfnyv5" path="res://Ressources/Window_2.png" id="2_2lint"]
+[ext_resource type="PackedScene" uid="uid://oya1pb127dx1" path="res://Ui/Menu/close_button.tscn" id="3_iexjq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_g78n8"]
+frequency = 0.037
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vq0u7"]
+noise = SubResource("FastNoiseLite_g78n8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7q3e"]
+shader = ExtResource("1_6yp0t")
+shader_parameter/dissolve_ratio = 1.0
+shader_parameter/dissolve = SubResource("NoiseTexture2D_vq0u7")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x7dq5"]
+frequency = 0.037
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_c3r54"]
+noise = SubResource("FastNoiseLite_x7dq5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jcoej"]
+shader = ExtResource("1_6yp0t")
+shader_parameter/dissolve_ratio = 1.0
+shader_parameter/dissolve = SubResource("NoiseTexture2D_c3r54")
+
+[sub_resource type="Gradient" id="Gradient_86pv1"]
+offsets = PackedFloat32Array(0, 0.911243, 1)
+colors = PackedColorArray(0.728822, 0.728822, 0.728822, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aw1dw"]
+gradient = SubResource("Gradient_86pv1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.50431, 0)
+
+[node name="Window" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 275.0
+offset_bottom = 275.0
+script = ExtResource("1_qmutq")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+material = SubResource("ShaderMaterial_u7q3e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2lint")
+draw_center = false
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_jcoej")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_aw1dw")
+
+[node name="Close_button" parent="." instance=ExtResource("3_iexjq")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -8.0
+offset_top = -8.0

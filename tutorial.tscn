@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://63ay8mf7fexc"]
+
+[ext_resource type="PackedScene" uid="uid://dcknfd16dxc7y" path="res://game.tscn" id="1_4xmrh"]
+[ext_resource type="Script" path="res://Tutorial.gd" id="2_pcprn"]
+[ext_resource type="Script" path="res://Tutorial_Dialogs.gd" id="3_et5wg"]
+[ext_resource type="PackedScene" uid="uid://phadggj3xvsd" path="res://Ui/tuto_arrow.tscn" id="4_dbvdn"]
+
+[node name="Tutorial" instance=ExtResource("1_4xmrh")]
+script = ExtResource("2_pcprn")
+
+[node name="Tutorial_Dialogs" type="Node2D" parent="." index="2"]
+script = ExtResource("3_et5wg")
+
+[node name="Tuto_Ui" type="Node2D" parent="." index="3"]
+position = Vector2(12, 12)
+
+[node name="Tuto_Arrow" parent="Tuto_Ui" index="0" instance=ExtResource("4_dbvdn")]

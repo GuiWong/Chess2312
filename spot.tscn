@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wiq0d4o47l5a"]
+
+[ext_resource type="Texture2D" uid="uid://dmkrcor3ckm0r" path="res://Ressources/Tiles2.png" id="1_0our7"]
+
+[node name="Spot" type="Node2D"]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0our7")
+hframes = 2
+region_rect = Rect2(0, 0, 16, 16)

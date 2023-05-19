@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://oya1pb127dx1"]
+
+[ext_resource type="Texture2D" uid="uid://b22b87i244hmn" path="res://Ressources/cross.png" id="1_8tjha"]
+
+[node name="Close_button" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = ExtResource("1_8tjha")

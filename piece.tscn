@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdkqx03nyx51n"]
+
+[ext_resource type="Script" path="res://Visual_Piece.gd" id="1_4ce6s"]
+[ext_resource type="Texture2D" uid="uid://blp2bjhtieanx" path="res://Ressources/pieces.png" id="1_wrhg3"]
+[ext_resource type="Shader" path="res://piece.gdshader" id="2_sqkrn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5012"]
+resource_local_to_scene = true
+shader = ExtResource("2_sqkrn")
+shader_parameter/active = false
+shader_parameter/base_color = null
+
+[node name="Visual_Piece" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_4ce6s")
+
+[node name="Back" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k5012")
+texture = ExtResource("1_wrhg3")
+hframes = 6
+vframes = 2
+frame = 6
+region_rect = Rect2(672, 320, 96, 32)
+
+[node name="Front" type="Sprite2D" parent="."]
+texture = ExtResource("1_wrhg3")
+hframes = 6
+vframes = 2
+region_rect = Rect2(672, 320, 96, 32)

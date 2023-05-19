@@ -1,0 +1,62 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Chess 2312"
+run/main_scene="res://Ui/Menu/main_menu.tscn"
+config/features=PackedStringArray("4.0", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+InputManager="*res://Input_Manager.gd"
+Inpt="*res://Input_Settings.gd"
+EffectManager="*res://Effect_Manager.gd"
+Score="*res://Scoring_Manager.gd"
+SceneManager="*res://Scene_Manager.gd"
+WindowManager="*res://Ui/Menu/window_manager.gd"
+
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=810
+window/stretch/scale=3.0
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [null, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
+key_validate={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+key_pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+focus_up={
+"deadzone": 0.5,
+"events": []
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localisation/lines.en.translation", "res://localisation/lines.fr.translation")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"

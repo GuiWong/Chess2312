@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bixol0rog3ym0"]
+
+[ext_resource type="Texture2D" uid="uid://dxip84cwaicjy" path="res://Ressources/Ui/buton_3.png" id="1_m4ri3"]
+[ext_resource type="Texture2D" uid="uid://74k38ya604tl" path="res://Ressources/Ui/buton_6.png" id="2_5qmfy"]
+
+[node name="Color_mode_toggle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("1_m4ri3")
+texture_pressed = ExtResource("2_5qmfy")

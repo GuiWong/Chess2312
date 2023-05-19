@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyoash36vsv0j"]
+
+[ext_resource type="Theme" uid="uid://bckry0hurxbm0" path="res://Theme_test.tres" id="1_h47qr"]
+[ext_resource type="Texture2D" uid="uid://b22b87i244hmn" path="res://Ressources/cross.png" id="1_oepsb"]
+[ext_resource type="Script" path="res://m_menu_proto.gd" id="1_q3u5j"]
+[ext_resource type="PackedScene" uid="uid://btfpaeecbeyu0" path="res://Ui/Menu/window.tscn" id="4_bfc31"]
+
+[node name="m_menu_proto" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q3u5j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -50.5
+offset_right = 46.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+tooltip_text = "start a new game"
+theme = ExtResource("1_h47qr")
+text = "New Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_h47qr")
+text = "tutorial"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_h47qr")
+text = "test"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+tooltip_text = "Quit Game"
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_h47qr")
+action_mode = 0
+texture_normal = ExtResource("1_oepsb")
+
+[node name="Window" parent="." instance=ExtResource("4_bfc31")]
+offset_left = 111.0
+offset_top = 68.0
+offset_right = 386.0
+offset_bottom = 343.0
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="start_game"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="start_tutorial"]

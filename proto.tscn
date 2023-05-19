@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg3n2kw6al0ar"]
+
+[ext_resource type="PackedScene" uid="uid://c4k623v338bna" path="res://visual_board.tscn" id="1_853mn"]
+[ext_resource type="Script" path="res://proto.gd" id="1_pt1lk"]
+[ext_resource type="Texture2D" uid="uid://b3vybiie12xkw" path="res://Ressources/selected.png" id="3_hrgwo"]
+[ext_resource type="PackedScene" uid="uid://dbjwuywkbofo" path="res://selection_cross.tscn" id="4_15r3g"]
+[ext_resource type="PackedScene" uid="uid://7tv7gw5eu30t" path="res://board.tscn" id="4_hkt60"]
+
+[node name="Proto" type="Node2D"]
+script = ExtResource("1_pt1lk")
+
+[node name="Visual_board" parent="." instance=ExtResource("1_853mn")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_hrgwo")
+
+[node name="Selection_Cross" parent="." instance=ExtResource("4_15r3g")]
+
+[node name="Board" parent="." instance=ExtResource("4_hkt60")]
+
+[node name="Piece_Bag" type="Node2D" parent="."]
+position = Vector2(326, 86)

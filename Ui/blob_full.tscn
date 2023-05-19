@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://c26r46nhk2pja"]
+
+[ext_resource type="PackedScene" uid="uid://dxhnuy14kh026" path="res://Ui/score_blob.tscn" id="1_3nevd"]
+[ext_resource type="Script" path="res://Ui/blob_full.gd" id="1_uur1q"]
+[ext_resource type="Shader" path="res://Ui/move_shower.gdshader" id="2_sdlfc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7fmb"]
+shader = ExtResource("2_sdlfc")
+
+[node name="Blob_Full" type="Node2D"]
+script = ExtResource("1_uur1q")
+
+[node name="Score_Blob" parent="." instance=ExtResource("1_3nevd")]
+z_index = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+material = SubResource("ShaderMaterial_w7fmb")
+
+[node name="Left" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, -24, 0)
+width = 2.0
+
+[node name="Right" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, 24, 0)
+width = 2.0
+
+[node name="Up" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, 0, -24)
+width = 2.0
+
+[node name="Down" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, 0, 24)
+width = 2.0
+
+[node name="Down2" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, -24, -24)
+width = 2.0
+
+[node name="Down3" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, 24, 24)
+width = 2.0
+
+[node name="Down4" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, 24, -24)
+width = 2.0
+
+[node name="Down5" type="Line2D" parent="Node2D"]
+use_parent_material = true
+points = PackedVector2Array(0, 0, -24, 24)
+width = 2.0

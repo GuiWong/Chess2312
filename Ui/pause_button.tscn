@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckyauloggu5gv"]
+
+[ext_resource type="Texture2D" uid="uid://v8rnqo1hxhku" path="res://Ressources/Ui/button_pause_1.png" id="1_1c3ip"]
+[ext_resource type="Texture2D" uid="uid://qajn8l6a4h3n" path="res://Ressources/Ui/button_pause_2.png" id="2_shmpm"]
+
+[node name="Pause_Button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_1c3ip")
+texture_hover = ExtResource("2_shmpm")
