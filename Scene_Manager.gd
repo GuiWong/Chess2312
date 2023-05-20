@@ -2,7 +2,8 @@ extends Node
 
 var game_scene = preload("res://game.tscn")
 var tutorial_scene = preload("res://tutorial.tscn")
-var main_menu_scene = preload("res://Ui/Menu/main_menu.tscn")
+#var main_menu_scene = preload("res://Ui/Menu/main_menu.tscn")
+var main_menu_scene = preload("res://Ui/Menu/main_menu_2.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

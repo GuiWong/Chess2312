@@ -23,7 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Graphic" type="ScrollContainer" parent="Tabs"]
-visible = false
 layout_mode = 2
 follow_focus = true
 vertical_scroll_mode = 2
@@ -97,6 +96,7 @@ layout_mode = 2
 input_name = "Cycle Active Piece"
 
 [node name="Game" type="ScrollContainer" parent="Tabs"]
+visible = false
 layout_mode = 2
 follow_focus = true
 vertical_scroll_mode = 2
@@ -176,6 +176,7 @@ grow_vertical = 0
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Cancel"
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
@@ -184,4 +185,5 @@ text = "Apply"
 
 [node name="Button3" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "  Ok  "

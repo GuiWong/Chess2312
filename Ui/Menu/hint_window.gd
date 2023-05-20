@@ -37,7 +37,7 @@ func get_bonus_piece(b_t):
 		return 3
 func on_onglet_selected(id):
 	
-	print("selected " + str(id) + " help menu")
+	#print("selected " + str(id) + " help menu")
 	
 	$Bonus_type2.visible= false
 	$Selected_Name.set_text(id)
@@ -78,4 +78,6 @@ func on_onglet_selected(id):
 				was_up = true
 			
 	$Effect_Label.text = effect_list[id]
+	
+
 			

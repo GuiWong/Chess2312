@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 @export var input_name ="Pause / Exit"
-var key_code_stored
+var key_code_stored = KEY_ESCAPE
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	

@@ -9,32 +9,32 @@
 [ext_resource type="PackedScene" uid="uid://b6snd3ywrwvg2" path="res://Ui/Menu/piece_hint_selector.tscn" id="4_442af"]
 [ext_resource type="PackedScene" uid="uid://cy4gd8wetoo5s" path="res://Ui/Menu/piece_text.tscn" id="4_fqwyv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7dkg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s0tw"]
 resource_local_to_scene = true
 atlas = ExtResource("1_i32lv")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwyjb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsiwc"]
 resource_local_to_scene = true
 atlas = ExtResource("1_i32lv")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oo03j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb8wi"]
 resource_local_to_scene = true
 atlas = ExtResource("1_i32lv")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_66rnt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kshbe"]
 resource_local_to_scene = true
 atlas = ExtResource("1_i32lv")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_28a78"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpm0r"]
 resource_local_to_scene = true
 atlas = ExtResource("1_i32lv")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ny7s2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea2rx"]
 resource_local_to_scene = true
 atlas = ExtResource("1_i32lv")
 region = Rect2(0, 0, 16, 16)
@@ -155,14 +155,14 @@ mouse_filter = 2
 [node name="Piece_hint_selector" parent="Control" instance=ExtResource("4_442af")]
 layout_mode = 2
 offset_bottom = 17.0
-texture_normal = SubResource("AtlasTexture_v7dkg")
+texture_normal = SubResource("AtlasTexture_4s0tw")
 
 [node name="Piece_hint_selector2" parent="Control" instance=ExtResource("4_442af")]
 layout_mode = 2
 offset_left = 13.0
 offset_right = 29.0
 offset_bottom = 17.0
-texture_normal = SubResource("AtlasTexture_uwyjb")
+texture_normal = SubResource("AtlasTexture_tsiwc")
 id = 1
 
 [node name="Piece_hint_selector3" parent="Control" instance=ExtResource("4_442af")]
@@ -170,7 +170,7 @@ layout_mode = 2
 offset_left = 26.0
 offset_right = 42.0
 offset_bottom = 17.0
-texture_normal = SubResource("AtlasTexture_oo03j")
+texture_normal = SubResource("AtlasTexture_sb8wi")
 id = 2
 
 [node name="Piece_hint_selector4" parent="Control" instance=ExtResource("4_442af")]
@@ -178,7 +178,7 @@ layout_mode = 2
 offset_left = 39.0
 offset_right = 55.0
 offset_bottom = 17.0
-texture_normal = SubResource("AtlasTexture_66rnt")
+texture_normal = SubResource("AtlasTexture_kshbe")
 id = 3
 
 [node name="Piece_hint_selector5" parent="Control" instance=ExtResource("4_442af")]
@@ -186,7 +186,7 @@ layout_mode = 2
 offset_left = 52.0
 offset_right = 68.0
 offset_bottom = 17.0
-texture_normal = SubResource("AtlasTexture_28a78")
+texture_normal = SubResource("AtlasTexture_tpm0r")
 id = 4
 
 [node name="Piece_hint_selector6" parent="Control" instance=ExtResource("4_442af")]
@@ -194,5 +194,5 @@ layout_mode = 2
 offset_left = 65.0
 offset_right = 81.0
 offset_bottom = 17.0
-texture_normal = SubResource("AtlasTexture_ny7s2")
+texture_normal = SubResource("AtlasTexture_ea2rx")
 id = 5
