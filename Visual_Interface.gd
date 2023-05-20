@@ -144,7 +144,8 @@ func push_piece(o,d):
 	var next = get_piece_form_pos(o)
 	var dist = 1
 	
-	reset_active_piece()
+	#reset_active_piece()
+	#Can Crash (Error) (2queen simultaneous)
 	
 	while next != null:
 		
@@ -169,13 +170,13 @@ func push_piece(o,d):
 	
 		await(get_tree().create_timer(0.03).timeout)
 		
-	print ("loop finished")
+	#print ("loop finished")
 		
 	for j in range(queue.size()):
 		
 		queue[j].position =targets[j] * 24
 		
-	#reset_active_piece()
+	reset_active_piece()
 	
 func push_piece_old(o,d):
 	
@@ -263,15 +264,15 @@ func build_score():
 		b_i.build(p[2])
 		$Overlay/Score_UI.add_child(b_i)
 		
-	var line = load("res://Ui/color_score_line.tscn")
+	#var line = load("res://Ui/color_score_line.tscn")
 	
-	for c in Score.color_groups:
+	#for c in Score.color_groups:
 		
-		var c_i = line.instantiate()
-		c_i.get_child(0).text = str( c[1])
-		c_i.get_child(2).text = str(Score.group_point[c[1]])
+	#	var c_i = line.instantiate()
+	#	c_i.get_child(0).text = str( c[1])
+	#	c_i.get_child(2).text = str(Score.group_point[c[1]])
 		
-		$Color_Score/Control/Color_Score.add_child(c_i)
+	#	$Color_Score/Control/Color_Score.add_child(c_i)
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

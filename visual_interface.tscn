@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdf6alep5my7c"]
+[gd_scene load_steps=14 format=3 uid="uid://cdf6alep5my7c"]
 
 [ext_resource type="Script" path="res://Visual_Interface.gd" id="1_6xkr7"]
 [ext_resource type="PackedScene" uid="uid://c4k623v338bna" path="res://visual_board.tscn" id="2_j7w6q"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://be4cmng3h0sma" path="res://Ui/color_score.tscn" id="7_6q7va"]
 [ext_resource type="PackedScene" uid="uid://c1hwg83wuro26" path="res://Ui/text_box_2.tscn" id="7_8h172"]
 [ext_resource type="PackedScene" uid="uid://c2xyo8g580b7r" path="res://Ui/Menu/version_print.tscn" id="7_nu2tp"]
+[ext_resource type="PackedScene" uid="uid://det7u6axd8g6p" path="res://Ui/Menu/hint_window.tscn" id="9_2ashe"]
 [ext_resource type="PackedScene" uid="uid://o4t21skjpnqx" path="res://Ui/top_banner.tscn" id="9_n61lf"]
 [ext_resource type="PackedScene" uid="uid://boqtqxpn8bqhe" path="res://Ui/button_banner.tscn" id="10_v2y4l"]
 
@@ -208,6 +209,9 @@ label_settings = ExtResource("6_ker3w")
 layout_mode = 2
 text = "press Escape to pause game"
 label_settings = ExtResource("6_ker3w")
+
+[node name="Hint_Window" parent="Tutorial" instance=ExtResource("9_2ashe")]
+position = Vector2(342, 3)
 
 [node name="Top_Banner" parent="." instance=ExtResource("9_n61lf")]
 z_index = -2

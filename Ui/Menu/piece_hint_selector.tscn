@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6snd3ywrwvg2"]
+
+[ext_resource type="Texture2D" uid="uid://blp2bjhtieanx" path="res://Ressources/pieces.png" id="1_rr1ni"]
+[ext_resource type="Script" path="res://Ui/Menu/piece_hint_selector.gd" id="2_xywkx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb4bu"]
+resource_local_to_scene = true
+atlas = ExtResource("1_rr1ni")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Piece_hint_selector" type="TextureButton"]
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = SubResource("AtlasTexture_yb4bu")
+script = ExtResource("2_xywkx")

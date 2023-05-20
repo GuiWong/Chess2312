@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8dfean12i2wf"]
+
+[ext_resource type="Script" path="res://Ui/Menu/Proto_Input.gd" id="1_s68gl"]
+[ext_resource type="Texture2D" uid="uid://hnm1umh3xsgq" path="res://Ressources/Ui/buton_1.png" id="2_vuou3"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(21, 93)
+
+[node name="Proto_Input" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 400.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s68gl")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Proto_Input"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Proto_Input/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Proto_Input/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Validate Text :"
+
+[node name="TextureButton" type="TextureButton" parent="Proto_Input/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_vuou3")
+
+[node name="Label" type="Label" parent="Proto_Input/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "enter"

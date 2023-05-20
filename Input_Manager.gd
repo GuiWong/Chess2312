@@ -21,6 +21,9 @@ signal choose_overlay( id)
 signal text_validated
 
 signal popup_confirm_request(pos,callable)
+signal text_popup_confirm
+
+signal key_pressed(key)
 
 var board_mode = true
 var focus = Vector3(0,0,0)
@@ -40,6 +43,10 @@ func transmit_text_validate():
 func transmit_pause_closed():
 	
 	emit_signal("pause")
+	
+func transmit_key(key):
+	
+	emit_signal("key_pressed",key)
 
 
 func _input(event):
@@ -53,6 +60,8 @@ func _input(event):
 			
 		if event.keycode in Inpt.pause:
 			emit_signal("pause")
+			
+		transmit_key(event.keycode)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy4gd8wetoo5s"]
+
+[ext_resource type="Script" path="res://Ui/Menu/piece_text.gd" id="1_asoeo"]
+[ext_resource type="Texture2D" uid="uid://blp2bjhtieanx" path="res://Ressources/pieces.png" id="1_oqxol"]
+[ext_resource type="LabelSettings" uid="uid://cl5dvtx0v4n15" path="res://Ui/small_bigger.tres" id="2_fnu28"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4w05"]
+atlas = ExtResource("1_oqxol")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Piece_Text" type="HBoxContainer"]
+offset_right = 51.0
+offset_bottom = 17.0
+script = ExtResource("1_asoeo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "PAWN"
+label_settings = ExtResource("2_fnu28")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_l4w05")

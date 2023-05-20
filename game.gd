@@ -25,6 +25,10 @@ var overlay_count = 2
 
 var mouse_in_board = false
 
+var popup_text_present = false
+
+signal text_popup_was_closed
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -47,6 +51,7 @@ func _ready():
 	#$Visual_Interface.show_move_arrow(Vector2(3,3),Vector2(4,3))
 	
 	InputManager.connect("popup_confirm_request",self.create_popup)
+	InputManager.connect("text_popup_confirm",self.on_popup_sent_done)
 	
 	begin_game()
 	
@@ -292,6 +297,10 @@ func on_pause():
 		state = STATE.pause
 		$UI/Pause_Menu.visible = true
 		$UI/Pause_Menu/Window.open_anim()
+		
+func on_popup_sent_done():
+	
+	close_text_popup()
 
 func save_effect_entities():
 	
@@ -313,7 +322,7 @@ func place_piece(pos):
 		piece_list.append(returned_piece)
 		$Visual_Interface.remove_piece(pos)
 	
-	var effects = $Board.play_piece(current_piece,pos)
+	var effects = $Board.play_piece(current_piece,pos)  #return activated tiles
 	
 	$Visual_Interface.play_piece(pos)
 	
@@ -402,7 +411,10 @@ func solve_effect(target):
 	elif working.type == EffectManager.TYPE.push:
 		
 		$Board.push_piece(working.author, target)
-		$Visual_Interface.push_piece(working.author, target)
+		await $Visual_Interface.push_piece(working.author, target)
+		
+		
+	$Board.rebuild_proximiy()
 		
 	effect_queue.remove_at(active_effect_index)
 	effectors_entity.remove_at(active_effect_index)
@@ -476,6 +488,23 @@ func create_dialog_popup(callable,txt,button_txt= 'ok'):
 	var diag = WindowManager.create_dialog_popup(callable,txt,button_txt)
 	diag.can_close = false
 	$UI/Click_Blocker.add_child(diag)
+	InputManager.connect("validate",diag.on_click)
+	
+func create_text_popup(txt):
+	
+	var ppup = load("res://Ui/Menu/popup_text.tscn")
+	var ppup_i = ppup.instantiate()
+	ppup_i.set_text(txt)
+	InputManager.connect("validate",ppup_i.on_click)
+	InputManager.connect("key_validate",ppup_i.on_click)
+	popup_text_present = true
+	$UI/Click_Blocker.add_child(ppup_i)
+	
+func close_text_popup():
+	
+	popup_text_present = false	
+	emit_signal("text_popup_was_closed")
+	
 	
 func update_score():
 	

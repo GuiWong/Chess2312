@@ -5,7 +5,8 @@ var color_groups = []
 var patterns = []
 var score = 0
 
-var group_point=[0,0,2,4,7,11,16,21,26,31,36,41,46,51,56,61,66]
+#var group_point=[0,0,2,4,7,11,16,21,26,31,36,41,46,51,56,61,66] Old Version
+var group_point=[0,0,2,3,5,7,10,13,17,21,26,31,37,43,50,57,65]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

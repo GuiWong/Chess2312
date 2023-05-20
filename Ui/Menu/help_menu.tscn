@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cffp3dkgc6xf1"]
+
+[ext_resource type="Texture2D" uid="uid://blp2bjhtieanx" path="res://Ressources/pieces.png" id="1_vuqcv"]
+[ext_resource type="PackedScene" uid="uid://c0sqd4vokeoex" path="res://Ui/Menu/hint_effect.tscn" id="2_o5xp7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp6he"]
+atlas = ExtResource("1_vuqcv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0hj6"]
+atlas = ExtResource("1_vuqcv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eww8g"]
+atlas = ExtResource("1_vuqcv")
+region = Rect2(32, 0, 16, 16)
+
+[node name="Help_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = -1327.0
+offset_bottom = -772.0
+tab_count = 3
+tab_0/title = ""
+tab_0/icon = SubResource("AtlasTexture_rp6he")
+tab_1/title = ""
+tab_1/icon = SubResource("AtlasTexture_n0hj6")
+tab_2/title = ""
+tab_2/icon = SubResource("AtlasTexture_eww8g")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 109.0
+offset_bottom = 132.0
+
+[node name="Hint_effect" parent="TabContainer" instance=ExtResource("2_o5xp7")]
+layout_mode = 2
+
+[node name="Hint_effect2" parent="TabContainer" instance=ExtResource("2_o5xp7")]
+visible = false
+layout_mode = 2

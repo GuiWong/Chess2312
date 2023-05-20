@@ -123,6 +123,36 @@ func build_effect_data(pos):
 				
 	return EffectManager.create_effect(type[0],pos,targets,q)
 				
+				
+func rebuild_proximiy():
+	
+	for y in range (8):
+		for x in range(8):
+			
+			content[y][x].in_range = false
+			
+	var mi = -1
+	var ma = 1
+	
+			
+	for y in range (8):
+		for x in range(8):
+			
+			var emmiter_piece = content[y][x].content
+			
+			if emmiter_piece != null:
+				
+				if emmiter_piece.type == piece_data.TYPE.TOWER:
+					mi = -2
+					ma= 2
+				else:
+					mi= -1
+					ma=1
+					
+				for yy in range(mi,ma+1):
+					for xx in range(mi,ma+1):
+			
+						content[min(7,max(0,y+yy))][min(7,max(0,x+xx))].in_range = true
 			
 func play_piece(pawn,pos):
 	

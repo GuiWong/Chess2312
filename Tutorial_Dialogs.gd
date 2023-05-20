@@ -3,6 +3,21 @@ extends Node2D
 
 var just_play = "play on the marked spot"
 
+var temp_line = "Some people say that knowledge 
+from the old games have been lost.
+Let's show them how wrong they are.
+I'll teach you how to play chess. \n \n \n press [ENTER] or click anywhere to close this window"
+
+var line_no = "Chess was known worldwide since the 3rd Crusade in 1872. I'll teach you using a method most historians believe was used by schools before the 2129 war.
+
+I'll Use the smaller text box for instructions. It should be quick. "
+
+var line_2 = "Chess is a singleplayer game, where you place pieces on a 8x8 board.
+
+All 32 pieces have to be placed to finish the game. 
+
+Each turn, the player draws a random piece and then place it on the board."
+
 
 var skip_rule =[
 	

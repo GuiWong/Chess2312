@@ -105,6 +105,13 @@ func update_tilemap(data,group_quantity):
 			
 		blob_i.get_child(1).get_child(1).text = str(Score.group_point[Score.color_groups[g][1]])
 		
+		
+		#handle outofscreeen blobs
+		if blob_i.position.x < 8:
+			blob_i.position.x = 8
+		if blob_i.position.y < 8:
+			blob_i.position.y = 8
+		
 		$Blobs.add_child(blob_i)
 	
 

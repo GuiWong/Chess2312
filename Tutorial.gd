@@ -8,6 +8,12 @@ var wait_for_action = false
 func step_tutorial(step):		#return true if need to wait
 	
 	$Tuto_Ui/Tuto_Arrow.scale = Vector2(1,1)
+	
+	#if current_turn == 0:
+		
+	#	state = STATE.pause
+	#	create_dialog_popup(on_text_validate,"you finished tutorial","quit to menu")
+		
 	if current_turn == 10:
 		
 		#print("tutorial finished")
@@ -108,7 +114,21 @@ func new_game():
 	
 	current_turn=-1
 	
+	#create_dialog_popup(on_text_validate,"TUTO_POPUP1","quit to menu")
+	
+	
+	
 func new_turn():
+	
+	if current_turn == -1:
+		create_text_popup($Tutorial_Dialogs.temp_line)
+		state =STATE.waiting
+		await text_popup_was_closed
+	
+		create_text_popup($Tutorial_Dialogs.line_2)
+		state =STATE.waiting
+		await text_popup_was_closed
+	
 	
 	current_turn += 1
 	$Visual_Interface.update_turn_counter(current_turn)
@@ -264,5 +284,6 @@ func end_turn():
 	
 func close_dialog_box():
 	
-	emit_signal("proceed")
+	if not popup_text_present:
+		emit_signal("proceed")
 

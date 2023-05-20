@@ -1,0 +1,198 @@
+[gd_scene load_steps=15 format=3 uid="uid://det7u6axd8g6p"]
+
+[ext_resource type="Texture2D" uid="uid://bkbpg825uddi2" path="res://Ressources/Tiles.png" id="1_bnrac"]
+[ext_resource type="Texture2D" uid="uid://blp2bjhtieanx" path="res://Ressources/pieces.png" id="1_i32lv"]
+[ext_resource type="Texture2D" uid="uid://dmeax7ka8gdpx" path="res://Ressources/Icons-Essentials.png" id="1_y0iwi"]
+[ext_resource type="Script" path="res://Ui/Menu/hint_window.gd" id="1_y1tyy"]
+[ext_resource type="LabelSettings" uid="uid://bkqckmjlcc5ts" path="res://Ui/small_label.tres" id="2_2w26b"]
+[ext_resource type="Texture2D" uid="uid://bx3n8tx6r45ne" path="res://Ressources/Ui/hint2.png" id="3_xkc14"]
+[ext_resource type="PackedScene" uid="uid://b6snd3ywrwvg2" path="res://Ui/Menu/piece_hint_selector.tscn" id="4_442af"]
+[ext_resource type="PackedScene" uid="uid://cy4gd8wetoo5s" path="res://Ui/Menu/piece_text.tscn" id="4_fqwyv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6nb8"]
+resource_local_to_scene = true
+atlas = ExtResource("1_i32lv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyalk"]
+resource_local_to_scene = true
+atlas = ExtResource("1_i32lv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd2pt"]
+resource_local_to_scene = true
+atlas = ExtResource("1_i32lv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnvvg"]
+resource_local_to_scene = true
+atlas = ExtResource("1_i32lv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cejb3"]
+resource_local_to_scene = true
+atlas = ExtResource("1_i32lv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvyt6"]
+resource_local_to_scene = true
+atlas = ExtResource("1_i32lv")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Hint_Window" type="Node2D"]
+script = ExtResource("1_y1tyy")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+offset_right = 134.0
+offset_bottom = 122.0
+texture = ExtResource("1_bnrac")
+region_rect = Rect2(48, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 138.0
+offset_bottom = 126.0
+texture = ExtResource("1_y0iwi")
+draw_center = false
+region_rect = Rect2(48, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 57.0
+offset_bottom = 62.0
+text = "Bonus:"
+
+[node name="Point_Label" type="Label" parent="."]
+offset_left = 62.0
+offset_top = 36.0
+offset_right = 75.0
+offset_bottom = 62.0
+text = "2"
+
+[node name="Point_text" type="Label" parent="."]
+offset_left = 76.0
+offset_top = 45.0
+offset_right = 155.0
+offset_bottom = 57.0
+text = "pts for each:"
+label_settings = ExtResource("2_2w26b")
+
+[node name="Bonus_type" parent="." instance=ExtResource("4_fqwyv")]
+offset_left = 71.0
+offset_top = 63.0
+offset_right = 122.0
+offset_bottom = 80.0
+id = 1
+
+[node name="Bonus_type2" parent="." instance=ExtResource("4_fqwyv")]
+offset_left = 71.0
+offset_top = 70.0
+offset_right = 122.0
+offset_bottom = 87.0
+id = 4
+
+[node name="Proxi_Image" type="Sprite2D" parent="."]
+position = Vector2(16, 71)
+texture = ExtResource("3_xkc14")
+hframes = 2
+vframes = 2
+frame = 3
+region_rect = Rect2(0, 0, 80, 16)
+
+[node name="Proxi_Label" type="Label" parent="Proxi_Image"]
+offset_left = 11.0
+offset_top = -6.0
+offset_right = 53.0
+offset_bottom = 6.0
+text = "Adjacent"
+label_settings = ExtResource("2_2w26b")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 81.0
+offset_right = 92.0
+offset_bottom = 107.0
+text = "Effect:"
+
+[node name="Effect_Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 106.0
+offset_right = 87.0
+offset_bottom = 118.0
+text = "none"
+label_settings = ExtResource("2_2w26b")
+
+[node name="Selected_Name" parent="." instance=ExtResource("4_fqwyv")]
+offset_left = 19.0
+offset_top = 18.0
+offset_right = 70.0
+offset_bottom = 35.0
+id = 1
+no_text = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_right = 94.0
+offset_bottom = 21.0
+mouse_filter = 2
+
+[node name="Piece_hint_selector" parent="Control" instance=ExtResource("4_442af")]
+layout_mode = 2
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_n6nb8")
+
+[node name="Piece_hint_selector2" parent="Control" instance=ExtResource("4_442af")]
+layout_mode = 2
+offset_left = 13.0
+offset_right = 29.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_jyalk")
+id = 1
+
+[node name="Piece_hint_selector3" parent="Control" instance=ExtResource("4_442af")]
+layout_mode = 2
+offset_left = 26.0
+offset_right = 42.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_pd2pt")
+id = 2
+
+[node name="Piece_hint_selector4" parent="Control" instance=ExtResource("4_442af")]
+layout_mode = 2
+offset_left = 39.0
+offset_right = 55.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_wnvvg")
+id = 3
+
+[node name="Piece_hint_selector5" parent="Control" instance=ExtResource("4_442af")]
+layout_mode = 2
+offset_left = 52.0
+offset_right = 68.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_cejb3")
+id = 4
+
+[node name="Piece_hint_selector6" parent="Control" instance=ExtResource("4_442af")]
+layout_mode = 2
+offset_left = 65.0
+offset_right = 81.0
+offset_bottom = 17.0
+texture_normal = SubResource("AtlasTexture_lvyt6")
+id = 5
