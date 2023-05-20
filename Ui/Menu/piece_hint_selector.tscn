@@ -11,5 +11,6 @@ region = Rect2(0, 0, 16, 16)
 [node name="Piece_hint_selector" type="TextureButton"]
 offset_right = 16.0
 offset_bottom = 16.0
+mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_yb4bu")
 script = ExtResource("2_xywkx")

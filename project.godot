@@ -23,6 +23,8 @@ EffectManager="*res://Effect_Manager.gd"
 Score="*res://Scoring_Manager.gd"
 SceneManager="*res://Scene_Manager.gd"
 WindowManager="*res://Ui/Menu/window_manager.gd"
+MySettings="*res://mySettings.gd"
+SmallLabel="*res://Ui/small_label.tres"
 
 [display]
 

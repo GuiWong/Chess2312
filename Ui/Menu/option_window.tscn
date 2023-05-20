@@ -1,0 +1,187 @@
+[gd_scene load_steps=4 format=3 uid="uid://xkga3hjxv05a"]
+
+[ext_resource type="Script" path="res://Ui/Menu/option_window.gd" id="1_aju5y"]
+[ext_resource type="PackedScene" uid="uid://bqogmljkonrxp" path="res://option_line.tscn" id="1_w2axv"]
+[ext_resource type="PackedScene" uid="uid://5nyd3fc2g6jk" path="res://Ui/Menu/input_setter.tscn" id="2_5btij"]
+
+[node name="Option_Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aju5y")
+
+[node name="Tabs" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Graphic" type="ScrollContainer" parent="Tabs"]
+visible = false
+layout_mode = 2
+follow_focus = true
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tabs/Graphic"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Tabs/Graphic/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option_Line2" parent="Tabs/Graphic/VBoxContainer" instance=ExtResource("1_w2axv")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tabs/Graphic/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator5" type="VSeparator" parent="Tabs/Graphic/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Tabs/Graphic/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Value:"
+
+[node name="Resolution_Value" type="Label" parent="Tabs/Graphic/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "you shouldn't see this"
+
+[node name="VSeparator4" type="VSeparator" parent="Tabs/Graphic/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HSeparator" type="HSeparator" parent="Tabs/Graphic/VBoxContainer"]
+layout_mode = 2
+
+[node name="Controls" type="ScrollContainer" parent="Tabs"]
+visible = false
+layout_mode = 2
+follow_focus = true
+vertical_scroll_mode = 2
+
+[node name="Inputs" type="VBoxContainer" parent="Tabs/Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator3" type="HSeparator" parent="Tabs/Controls/Inputs"]
+layout_mode = 2
+
+[node name="Pause" parent="Tabs/Controls/Inputs" instance=ExtResource("2_5btij")]
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="Tabs/Controls/Inputs"]
+layout_mode = 2
+
+[node name="Validate" parent="Tabs/Controls/Inputs" instance=ExtResource("2_5btij")]
+layout_mode = 2
+input_name = "Validate"
+
+[node name="Overlay" parent="Tabs/Controls/Inputs" instance=ExtResource("2_5btij")]
+layout_mode = 2
+input_name = "Cycle Overlay"
+
+[node name="Active" parent="Tabs/Controls/Inputs" instance=ExtResource("2_5btij")]
+layout_mode = 2
+input_name = "Cycle Active Piece"
+
+[node name="Game" type="ScrollContainer" parent="Tabs"]
+layout_mode = 2
+follow_focus = true
+vertical_scroll_mode = 2
+
+[node name="text_speed" type="VBoxContainer" parent="Tabs/Game"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Tabs/Game/text_speed"]
+layout_mode = 2
+
+[node name="Option_Line" type="HBoxContainer" parent="Tabs/Game/text_speed"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Tabs/Game/text_speed/Option_Line"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+
+[node name="Option_Name" type="Label" parent="Tabs/Game/text_speed/Option_Line"]
+layout_mode = 2
+text = "Text Speed"
+
+[node name="OptionButton" type="OptionButton" parent="Tabs/Game/text_speed/Option_Line"]
+layout_mode = 2
+size_flags_horizontal = 10
+item_count = 4
+selected = 2
+popup/item_0/text = "Slowest"
+popup/item_0/id = 0
+popup/item_1/text = "Slow"
+popup/item_1/id = 1
+popup/item_2/text = "Normal"
+popup/item_2/id = 2
+popup/item_3/text = "Fast"
+popup/item_3/id = 3
+
+[node name="VSeparator3" type="VSeparator" parent="Tabs/Game/text_speed/Option_Line"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Value_Line" type="HBoxContainer" parent="Tabs/Game/text_speed"]
+layout_mode = 2
+
+[node name="VSeparator5" type="VSeparator" parent="Tabs/Game/text_speed/Value_Line"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Tabs/Game/text_speed/Value_Line"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Value:"
+
+[node name="Speed_Value" type="Label" parent="Tabs/Game/text_speed/Value_Line"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "1440 x 810"
+
+[node name="VSeparator4" type="VSeparator" parent="Tabs/Game/text_speed/Value_Line"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HSeparator" type="HSeparator" parent="Tabs/Game/text_speed"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 124.0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Apply"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "  Ok  "

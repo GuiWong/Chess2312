@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://gmf2gawl823v"]
+
+[ext_resource type="PackedScene" uid="uid://btfpaeecbeyu0" path="res://Ui/Menu/window.tscn" id="1_j2r7q"]
+[ext_resource type="PackedScene" uid="uid://xkga3hjxv05a" path="res://Ui/Menu/option_window.tscn" id="2_y6wso"]
+
+[node name="Protot_windows" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="." instance=ExtResource("1_j2r7q")]
+offset_right = 347.0
+offset_bottom = 262.0
+
+[node name="Option_Window" parent="Window" instance=ExtResource("2_y6wso")]
+layout_mode = 1

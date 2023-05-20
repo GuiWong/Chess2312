@@ -1,0 +1,147 @@
+[gd_scene load_steps=3 format=3 uid="uid://cghlr1okoe8qc"]
+
+[ext_resource type="LabelSettings" uid="uid://drimtlmv11a2n" path="res://Ui/Menus_Base_Label.tres" id="1_sivdy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a7k7v"]
+font_size = 24
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Credit_Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 2.0
+offset_right = 198.0
+offset_bottom = 39.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_a7k7v")
+
+[node name="Label12" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 237.0
+offset_right = 320.0
+offset_bottom = 263.0
+text = "full credit and licence in licence.txt file"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label7" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 39.0
+offset_right = 56.0
+offset_bottom = 65.0
+text = "Code:"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label8" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 39.0
+offset_right = 284.0
+offset_bottom = 65.0
+text = "GuiWong"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label9" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 65.0
+offset_right = 69.0
+offset_bottom = 91.0
+text = "Design:"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label10" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 65.0
+offset_right = 284.0
+offset_bottom = 91.0
+text = "GuiWong"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label11" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 91.0
+offset_right = 41.0
+offset_bottom = 117.0
+text = "Art:"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 96.0
+offset_top = 104.0
+offset_right = 192.0
+offset_bottom = 130.0
+text = "Assets from:"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 139.0
+offset_right = 100.0
+offset_bottom = 165.0
+text = "1-Bit Pack"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 139.0
+offset_right = 298.0
+offset_bottom = 165.0
+text = "by Kenney "
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 165.0
+offset_right = 154.0
+offset_bottom = 191.0
+text = "MiniWorld Sprite"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label6" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 165.0
+offset_right = 287.0
+offset_bottom = 191.0
+text = "by shade "
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label13" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 191.0
+offset_right = 106.0
+offset_bottom = 217.0
+text = "Chess 2312"
+label_settings = ExtResource("1_sivdy")
+
+[node name="Label14" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 191.0
+offset_right = 311.0
+offset_bottom = 217.0
+text = "by GuiWong "
+label_settings = ExtResource("1_sivdy")

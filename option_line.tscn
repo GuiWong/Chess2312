@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bqogmljkonrxp"]
+
+[node name="Option_Line" type="HBoxContainer"]
+
+[node name="VSeparator" type="VSeparator" parent="."]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+
+[node name="Option_Name" type="Label" parent="."]
+layout_mode = 2
+text = "Resolution : "
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+item_count = 3
+popup/item_0/text = "480 x 270"
+popup/item_0/id = 0
+popup/item_1/text = "960 x 540"
+popup/item_1/id = 1
+popup/item_2/text = "1440 x 830"
+popup/item_2/id = 2
+
+[node name="VSeparator3" type="VSeparator" parent="."]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 8

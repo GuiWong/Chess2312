@@ -1,0 +1,129 @@
+[gd_scene load_steps=7 format=3 uid="uid://j57il54pc7cw"]
+
+[ext_resource type="PackedScene" uid="uid://c4k623v338bna" path="res://visual_board.tscn" id="1_xmodl"]
+[ext_resource type="Texture2D" uid="uid://dmeax7ka8gdpx" path="res://Ressources/Icons-Essentials.png" id="2_fw0yr"]
+[ext_resource type="Theme" uid="uid://cfh5b5hulmk5x" path="res://Ui/Menu/Main_Menu_Theme.tres" id="3_kfsy5"]
+[ext_resource type="PackedScene" uid="uid://btfpaeecbeyu0" path="res://Ui/Menu/window.tscn" id="4_twho7"]
+[ext_resource type="PackedScene" uid="uid://cghlr1okoe8qc" path="res://Ui/Menu/credit_window.tscn" id="5_0v2ve"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dug1q"]
+font_size = 24
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main_Menu_2" type="Node2D"]
+
+[node name="Visual_board" parent="." instance=ExtResource("1_xmodl")]
+visible = false
+position = Vector2(300, 32)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(7, 48)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(175, 32)
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(7, 48)
+
+[node name="Button" type="Button" parent="Buttons"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("3_kfsy5")
+text = "New Game"
+
+[node name="Button2" type="Button" parent="Buttons"]
+offset_top = 40.0
+offset_right = 124.0
+offset_bottom = 83.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_kfsy5")
+text = "Tutorial"
+
+[node name="Button3" type="Button" parent="Buttons"]
+offset_top = 80.0
+offset_right = 124.0
+offset_bottom = 123.0
+theme = ExtResource("3_kfsy5")
+text = "Settings"
+
+[node name="Button4" type="Button" parent="Buttons"]
+offset_top = 120.0
+offset_right = 124.0
+offset_bottom = 163.0
+theme = ExtResource("3_kfsy5")
+text = "Credits"
+
+[node name="Button5" type="Button" parent="Buttons"]
+offset_top = 160.0
+offset_right = 124.0
+offset_bottom = 203.0
+theme = ExtResource("3_kfsy5")
+text = "Credits"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Buttons"]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 127.0
+offset_bottom = 206.0
+texture = ExtResource("2_fw0yr")
+draw_center = false
+region_rect = Rect2(32, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Title" type="Node2D" parent="."]
+visible = false
+position = Vector2(240, 26)
+
+[node name="Label" type="Label" parent="Title"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -21.0
+offset_right = 75.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chess 2312"
+label_settings = SubResource("LabelSettings_dug1q")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Title/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -25.0
+offset_right = 104.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fw0yr")
+draw_center = false
+region_rect = Rect2(48, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="Window_pos" type="Node2D" parent="."]
+position = Vector2(133, 8)
+
+[node name="Window" parent="Window_pos" instance=ExtResource("4_twho7")]
+offset_right = 347.0
+offset_bottom = 262.0
+
+[node name="Credit_Window" parent="Window_pos/Window" instance=ExtResource("5_0v2ve")]
+layout_mode = 1
