@@ -39,8 +39,7 @@ offset_left = 4.0
 offset_top = 2.0
 offset_right = 280.0
 offset_bottom = 94.0
-text = "You are Playing a Prototype
-All feedback is welcome
-Have Fun"
+text = "
+"
 label_settings = SubResource("LabelSettings_6ke5y")
 vertical_alignment = 0
