@@ -87,13 +87,34 @@ layout_mode = 2
 layout_mode = 2
 input_name = "Validate"
 
+[node name="HSeparator5" type="HSeparator" parent="Tabs/Controls/Inputs"]
+layout_mode = 2
+
 [node name="Overlay" parent="Tabs/Controls/Inputs" instance=ExtResource("2_5btij")]
 layout_mode = 2
 input_name = "Cycle Overlay"
 
+[node name="HSeparator6" type="HSeparator" parent="Tabs/Controls/Inputs"]
+layout_mode = 2
+
 [node name="Active" parent="Tabs/Controls/Inputs" instance=ExtResource("2_5btij")]
 layout_mode = 2
 input_name = "Cycle Active Piece"
+
+[node name="HSeparator7" type="HSeparator" parent="Tabs/Controls/Inputs"]
+layout_mode = 2
+
+[node name="HSeparator8" type="HSeparator" parent="Tabs/Controls/Inputs"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tabs/Controls/Inputs"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Tabs/Controls/Inputs/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Reset to default
+"
 
 [node name="Game" type="ScrollContainer" parent="Tabs"]
 visible = false
@@ -176,7 +197,6 @@ grow_vertical = 0
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "Cancel"
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
@@ -185,5 +205,4 @@ text = "Apply"
 
 [node name="Button3" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "  Ok  "

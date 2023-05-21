@@ -15,6 +15,7 @@ func _process(delta):
 
 func start_listening():
 	
+	$Set_Input.disabled = true
 	InputManager.connect("key_pressed", set_key)
 	
 func set_key(key):
@@ -22,3 +23,4 @@ func set_key(key):
 	InputManager.disconnect("key_pressed", set_key)
 	key_code_stored = key
 	$Input_Value.text = OS.get_keycode_string(key)
+	$Set_Input.disabled = false

@@ -20,6 +20,11 @@ func _ready():
 	#$Tabs/Controls/Inputs/Active.key_code_stored = default_keys[3]
 	#$Tabs/Controls/Inputs/Active.key_code_stored = default_keys[3]
 	
+	$Tabs/Controls/Inputs/HBoxContainer/Button.connect("pressed",on_input_reset)
+	
+	$HBoxContainer/Button.connect("pressed",on_cancel)
+	$HBoxContainer/Button3.connect("pressed",on_validate)
+	
 	read_data()
 
 
@@ -44,6 +49,7 @@ func read_data():
 	$Tabs/Controls/Inputs/Overlay/Input_Value.text = OS.get_keycode_string(Inpt.toggle_ui[0])
 	$Tabs/Controls/Inputs/Active/Input_Value.text = OS.get_keycode_string(Inpt.switch[0])
 	
+	
 	$Tabs/Controls/Inputs/Pause.key_code_stored = Inpt.pause[0]
 	$Tabs/Controls/Inputs/Validate.key_code_stored = Inpt.validate[0]
 	$Tabs/Controls/Inputs/Overlay.key_code_stored = Inpt.toggle_ui[0]
@@ -66,8 +72,32 @@ func apply_data():
 
 func reset_settings():
 	
+	reset_inputs()
+	MySettings.text_speed = 1.0
+	
+func reset_inputs():
+	
 	Inpt.switch[0] = default_keys[3]
 	Inpt.pause[0] = default_keys[0]
 	Inpt.validate[0] = default_keys[1]
 	Inpt.toggle_ui[0] = default_keys[2]
-	MySettings.text_speed = 1.0
+	
+func on_input_reset():
+	
+	reset_inputs()
+	read_data()
+	
+func on_close():
+	
+	#print("closing attempt")
+	get_parent().close_anim()
+	
+func on_cancel():
+	
+	var p = WindowManager.create_confirm_popup(Vector2(140,135),self.on_close)
+	add_child(p)
+	
+func on_validate():
+	
+	apply_data()
+	on_close()

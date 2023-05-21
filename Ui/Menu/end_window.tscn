@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://drh8obwblovu3"]
+
+[ext_resource type="Texture2D" uid="uid://dmeax7ka8gdpx" path="res://Ressources/Icons-Essentials.png" id="1_8oa57"]
+[ext_resource type="Script" path="res://Ui/Menu/end_window.gd" id="1_d63pb"]
+[ext_resource type="Theme" uid="uid://cfh5b5hulmk5x" path="res://Ui/Menu/Main_Menu_Theme.tres" id="2_jfrcu"]
+[ext_resource type="PackedScene" uid="uid://b30xcdo1avg4l" path="res://Ui/Menu/point_step.tscn" id="3_wn1ly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ubgu"]
+atlas = ExtResource("1_8oa57")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cq5i"]
+atlas = ExtResource("1_8oa57")
+region = Rect2(16, 0, 16, 16)
+margin = Rect2(0, 4, 0, 8)
+filter_clip = true
+
+[node name="End_Window" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 347.0
+offset_bottom = 262.0
+script = ExtResource("1_d63pb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 12.0
+offset_right = 284.0
+offset_bottom = 38.0
+text = "You finished the game with:"
+
+[node name="ScoreBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 46.0
+offset_right = 332.0
+offset_bottom = 70.0
+max_value = 150.0
+value = 120.0
+rounded = true
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = SubResource("AtlasTexture_3ubgu")
+texture_progress = SubResource("AtlasTexture_8cq5i")
+texture_progress_offset = Vector2(3, 1)
+
+[node name="Bronze" parent="ScoreBar" instance=ExtResource("3_wn1ly")]
+position = Vector2(119, 11)
+type = 2
+
+[node name="Silver" parent="ScoreBar" instance=ExtResource("3_wn1ly")]
+position = Vector2(221, 11)
+type = 1
+
+[node name="Gold" parent="ScoreBar" instance=ExtResource("3_wn1ly")]
+position = Vector2(257, 11)
+
+[node name="Points" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 84.0
+offset_right = 275.0
+offset_bottom = 110.0
+text = "00"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 105.0
+offset_right = 275.0
+offset_bottom = 131.0
+text = "Points"
+horizontal_alignment = 1
+
+[node name="playername" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 135.0
+offset_right = 196.0
+offset_bottom = 165.0
+placeholder_text = "YourName"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[node name="savescore" type="Button" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 135.0
+offset_right = 330.0
+offset_bottom = 162.0
+text = "Save Score"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 191.0
+offset_right = 134.0
+offset_bottom = 234.0
+theme = ExtResource("2_jfrcu")
+text = "Quit to Menu
+"
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 191.0
+offset_right = 328.0
+offset_bottom = 234.0
+theme = ExtResource("2_jfrcu")
+text = "Play Again
+"

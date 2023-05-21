@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdf6alep5my7c"]
+[gd_scene load_steps=15 format=3 uid="uid://cdf6alep5my7c"]
 
 [ext_resource type="Script" path="res://Visual_Interface.gd" id="1_6xkr7"]
 [ext_resource type="PackedScene" uid="uid://c4k623v338bna" path="res://visual_board.tscn" id="2_j7w6q"]
 [ext_resource type="Texture2D" uid="uid://bdue6jfuy6w67" path="res://Ressources/BoxSelector.png" id="3_6jiq7"]
 [ext_resource type="Texture2D" uid="uid://pwev7645c580" path="res://Ressources/Box.png" id="3_arwwh"]
 [ext_resource type="PackedScene" uid="uid://cp7k2h4l04kwv" path="res://Ui/move_shower.tscn" id="4_v48im"]
+[ext_resource type="Texture2D" uid="uid://bmtd0yw48jn00" path="res://Ressources/Piece_Pedestal.png" id="6_0wng1"]
 [ext_resource type="LabelSettings" uid="uid://bkqckmjlcc5ts" path="res://Ui/small_label.tres" id="6_ker3w"]
 [ext_resource type="PackedScene" uid="uid://be4cmng3h0sma" path="res://Ui/color_score.tscn" id="7_6q7va"]
 [ext_resource type="PackedScene" uid="uid://c1hwg83wuro26" path="res://Ui/text_box_2.tscn" id="7_8h172"]
@@ -33,8 +34,19 @@ position = Vector2(12, 12)
 [node name="Move_Shower" parent="Board/Targets" instance=ExtResource("4_v48im")]
 visible = false
 
+[node name="Side_UI" type="Node2D" parent="."]
+position = Vector2(270, 134)
+
+[node name="Sprite2D" type="Sprite2D" parent="Side_UI"]
+visible = false
+z_index = -20
+texture = ExtResource("3_arwwh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Side_UI"]
+texture = ExtResource("6_0wng1")
+
 [node name="Hand" type="Node2D" parent="."]
-position = Vector2(330, 148)
+position = Vector2(270, 130)
 
 [node name="Sprite2D" type="Sprite2D" parent="Hand"]
 visible = false
@@ -190,6 +202,7 @@ vertical_alignment = 2
 position = Vector2(0, 32)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Tutorial"]
+visible = false
 offset_left = 200.0
 offset_top = 8.0
 offset_right = 240.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cesmngsbkuu5h"]
+
+[ext_resource type="Script" path="res://Ui/Menu/score_line.gd" id="1_eu4rg"]
+
+[node name="Score_Line" type="HBoxContainer"]
+script = ExtResource("1_eu4rg")
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Guiwong"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "100"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2

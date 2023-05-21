@@ -462,11 +462,17 @@ func end_turn():
 	
 func end_game():
 	
+	update_score()
+	
 	$Visual_Interface/Text_Box/Text_Box_2.clear()
 	$Visual_Interface/Text_Box/Text_Box_2.set_text("Game Finished")
 	$Visual_Interface/Text_Box/Text_Box_2.write_all()
 	
 	state = STATE.finished
+	
+	
+	
+	create_end_popup()
 	
 	
 func write_text(text):
@@ -479,6 +485,12 @@ func close_dialog_box():
 	
 	pass
 	
+func create_end_popup():
+	
+	var w = WindowManager.create_end_window(Score.calc_score())
+	$UI/Click_Blocker.add_child(w)
+	#w.open_anim()
+	
 func create_popup(pos,callable):
 	
 	$UI/Click_Blocker.add_child(WindowManager.create_confirm_popup(pos,callable))
@@ -488,7 +500,7 @@ func create_dialog_popup(callable,txt,button_txt= 'ok'):
 	var diag = WindowManager.create_dialog_popup(callable,txt,button_txt)
 	diag.can_close = false
 	$UI/Click_Blocker.add_child(diag)
-	InputManager.connect("validate",diag.on_click)
+	#InputManager.connect("validate",diag.on_click)
 	
 func create_text_popup(txt):
 	

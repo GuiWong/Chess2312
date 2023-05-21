@@ -128,7 +128,7 @@ func new_turn():
 		create_text_popup($Tutorial_Dialogs.line_2)
 		state =STATE.waiting
 		await text_popup_was_closed
-	
+			
 	
 	current_turn += 1
 	$Visual_Interface.update_turn_counter(current_turn)
@@ -273,7 +273,7 @@ func end_turn():
 		state = STATE.waiting
 		await proceed
 	
-	await new_turn()
+	await new_turn()	
 	
 	if piece_list.size() >= 1:
 		draw_piece()

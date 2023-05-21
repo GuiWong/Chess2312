@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://5nyd3fc2g6jk"]
+[gd_scene load_steps=4 format=3 uid="uid://5nyd3fc2g6jk"]
 
 [ext_resource type="Texture2D" uid="uid://hnm1umh3xsgq" path="res://Ressources/Ui/buton_1.png" id="1_2tf30"]
 [ext_resource type="Script" path="res://Ui/Menu/input_setter.gd" id="1_rqi4e"]
+[ext_resource type="Texture2D" uid="uid://c23go0slelmpx" path="res://Ressources/Ui/buton_2.png" id="3_5gmw8"]
 
 [node name="Input_setter" type="HBoxContainer"]
 script = ExtResource("1_rqi4e")
@@ -19,6 +20,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 focus_mode = 0
 texture_normal = ExtResource("1_2tf30")
+texture_disabled = ExtResource("3_5gmw8")
 
 [node name="VSeparator4" type="VSeparator" parent="."]
 custom_minimum_size = Vector2(24, 0)

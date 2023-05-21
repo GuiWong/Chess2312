@@ -9,7 +9,7 @@ var proxy_type = [null,0,1,0,0,2]
 var proxy_text = ["adjacent","diagonal","adjacent"]
 var proxy_frame = [3,2,1]
 
-var effect_list = ["none","none","swap with a neighbor","push a line","replace a piece on placement","move to an empty tile"]
+var effect_list = ["none","has a greater range","swap with a neighbor","push a line","replace a piece on placement","move to an empty tile"]
 
 
 # Called when the node enters the scene tree for the first time.
