@@ -15,3 +15,4 @@ script = ExtResource("3_et5wg")
 position = Vector2(12, 12)
 
 [node name="Tuto_Arrow" parent="Tuto_Ui" index="0" instance=ExtResource("4_dbvdn")]
+position = Vector2(-100, 0)

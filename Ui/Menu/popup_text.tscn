@@ -77,11 +77,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Chess is a singleplayer game, where you place pieces on a 8x8 board.
+text = "To explain a bit more how it works,
+each additional piece add more point.
 
-All 32 pieces have to be placed to finish the game. 
-
-Each turn, the player draws a random piece and then place it on the board."
+the 1st 2nd and 3rd add 1 point
+4th and 5th add 2 point
+6th and 7th add 3 points
+...
+So a 6 pieces group will score:
+1+1+1+2+2+3 = 10 points"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

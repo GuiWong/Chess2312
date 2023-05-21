@@ -113,6 +113,8 @@ func draw_piece():
 
 	current_piece = piece_list[i]
 	
+	update_hint_window(current_piece.type)		#handle automatic int window selection
+	
 	piece_list.remove_at(i)
 	
 func show_playable(c):
@@ -374,6 +376,9 @@ func select_effect(id):
 		
 		$Visual_Interface.build_playable_tile(effect_queue[id].target_list)
 		$Visual_Interface.set_active_piece(effect_queue[id].author)
+		
+		var pos = effect_queue[id].author
+		update_hint_window($Board.content[pos.y][pos.x].content.type)
 	
 func rebuild_effect():
 	
@@ -473,6 +478,14 @@ func end_game():
 	
 	
 	create_end_popup()
+	
+	
+func get_page_from_type(type):
+	
+	pass
+func update_hint_window(page):
+	
+	$Visual_Interface/Tutorial/Hint_Window.on_onglet_selected(page)
 	
 	
 func write_text(text):

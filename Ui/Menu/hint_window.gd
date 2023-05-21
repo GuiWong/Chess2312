@@ -37,6 +37,7 @@ func get_bonus_piece(b_t):
 		return 3
 func on_onglet_selected(id):
 	
+	InputManager.emit_signal("hint_menu_clicked")
 	#print("selected " + str(id) + " help menu")
 	
 	$Bonus_type2.visible= false

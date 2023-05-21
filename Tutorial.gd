@@ -5,6 +5,39 @@ signal proceed
 
 var wait_for_action = false
 
+
+func handle_popup(step):
+	
+	if current_turn == 2 and step == 0:
+		
+		create_text_popup($Tutorial_Dialogs.line_ui_1)
+		#state =STATE.waiting
+		await text_popup_was_closed
+		
+	if current_turn == 4 and step ==0:
+		
+		create_text_popup($Tutorial_Dialogs.POPUP_COLOR_UI)
+		#state =STATE.waiting
+		await text_popup_was_closed
+		
+	if current_turn == 5 and step == 3:
+		
+		create_text_popup($Tutorial_Dialogs.POPUP_COLOR_SCALING1)
+		state =STATE.waiting
+		await text_popup_was_closed
+		
+	if current_turn == 6 and step == 0:
+		
+		create_text_popup($Tutorial_Dialogs.POPUP_COLOR_SCALING2)
+		state =STATE.waiting
+		await text_popup_was_closed
+		
+	if current_turn == 10:
+		
+		state = STATE.finished
+		create_dialog_popup(SceneManager.load_main_menu,"you finished tutorial","quit to menu")
+		await text_popup_was_closed
+
 func step_tutorial(step):		#return true if need to wait
 	
 	$Tuto_Ui/Tuto_Arrow.scale = Vector2(1,1)
@@ -13,12 +46,19 @@ func step_tutorial(step):		#return true if need to wait
 		
 	#	state = STATE.pause
 	#	create_dialog_popup(on_text_validate,"you finished tutorial","quit to menu")
+	
+	if current_turn == 2 and step == 0:
+		
+	#	create_text_popup($Tutorial_Dialogs.line_ui_1)
+	#	state =STATE.waiting
+	#	await text_popup_was_closed
+		pass
 		
 	if current_turn == 10:
 		
 		#print("tutorial finished")
-		state = STATE.pause
-		create_dialog_popup(SceneManager.load_main_menu,"you finished tutorial","quit to menu")
+		#state = STATE.finished
+		#create_dialog_popup(SceneManager.load_main_menu,"you finished tutorial","quit to menu")
 		return true
 	
 	#----------------- arrow logic ------------------
@@ -39,6 +79,10 @@ func step_tutorial(step):		#return true if need to wait
 			
 			$Tuto_Ui/Tuto_Arrow.position= $Visual_Interface/Button_banner/Pattern_mode_toggle.global_position
 			
+		elif current_turn == 2:
+			
+			$Tuto_Ui/Tuto_Arrow.position= $Visual_Interface/Tutorial/Hint_Window/Control/Piece_hint_selector.global_position
+			
 		elif current_turn == 3:
 			
 			$Tuto_Ui/Tuto_Arrow.position= $Visual_Interface/Button_banner/Color_mode_toggle.global_position
@@ -51,6 +95,11 @@ func step_tutorial(step):		#return true if need to wait
 			
 			$Tuto_Ui/Tuto_Arrow.position = Vector2(458,224)
 			$Tuto_Ui/Tuto_Arrow.scale = Vector2(-1,1)
+			
+	if current_turn == 0 and step == 0:
+		
+		$Tuto_Ui/Tuto_Arrow.position = $Visual_Interface/Hand/Sprite2D.global_position - Vector2(8,12)
+		$Tuto_Ui/Tuto_Arrow.scale = Vector2(-1,-1)
 			
 	
 		
@@ -94,6 +143,7 @@ func new_game():
 	
 	InputManager.disconnect("key_validate",on_validate)
 	InputManager.connect("key_validate",close_dialog_box)
+	InputManager.connect("hint_menu_clicked",on_hint_clicked)
 	var t_list = []
 	var c = 0
 	
@@ -133,7 +183,7 @@ func new_turn():
 	current_turn += 1
 	$Visual_Interface.update_turn_counter(current_turn)
 	
-	
+	await handle_popup(0)
 	if step_tutorial(0):
 	
 		await proceed
@@ -151,9 +201,13 @@ func draw_piece():
 
 	current_piece = piece_list[0]
 	
+	if current_turn >= 2 :
+		
+		update_hint_window(current_piece.type)
+	
 	piece_list.remove_at(0)
 	
-	
+	await handle_popup(1)
 	step_tutorial(1)
 	#await proceed
 	
@@ -230,6 +284,8 @@ func place_piece(pos):
 	$Visual_Interface.remove_playable_tile()
 	$Visual_Interface.remove_effected_tile()
 	
+	await handle_popup(2)
+	
 	if step_tutorial(2):
 		state = STATE.waiting
 		await proceed
@@ -269,6 +325,8 @@ func end_turn():
 	$Visual_Interface.reset_score()
 	$Visual_Interface.build_score()
 	
+	await handle_popup(3)
+		
 	if step_tutorial(3):
 		state = STATE.waiting
 		await proceed
@@ -285,5 +343,13 @@ func end_turn():
 func close_dialog_box():
 	
 	if not popup_text_present:
+		emit_signal("proceed")
+		
+func on_hint_clicked():
+	
+	print("hint clicked")
+	if  wait_for_action:
+		
+		wait_for_action = false
 		emit_signal("proceed")
 

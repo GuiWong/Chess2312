@@ -25,6 +25,8 @@ signal text_popup_confirm
 
 signal key_pressed(key)
 
+signal hint_menu_clicked
+
 var board_mode = true
 var focus = Vector3(0,0,0)
 

@@ -41,11 +41,12 @@ vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 268.0
-offset_top = 72.0
-offset_right = 292.0
-offset_bottom = 96.0
+offset_right = 548.0
+offset_bottom = 170.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_fcnp2")
 texture_hover = ExtResource("4_7bkhr")
+stretch_mode = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

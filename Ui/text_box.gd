@@ -30,3 +30,8 @@ func set_text(txt):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+#Workaround for clickable text_box
+#func _on_gui_input(event):
+#	print(event,event.type)

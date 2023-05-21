@@ -1,0 +1,188 @@
+[gd_scene load_steps=7 format=3 uid="uid://uhfq005m6yp1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m11uw"]
+load_path = "res://.godot/imported/pieces.png-e51d4f95153c2b4fb3312d9075b24ee7.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbelj"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_m11uw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gqf16"]
+load_path = "res://.godot/imported/pieces.png-e51d4f95153c2b4fb3312d9075b24ee7.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8058g"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_gqf16")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqbc1"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_gqf16")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvcjq"]
+resource_local_to_scene = true
+atlas = SubResource("CompressedTexture2D_gqf16")
+region = Rect2(48, 0, 16, 16)
+
+[node name="testings" type="Node2D"]
+
+[node name="Background_Effect" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background_Effect"]
+position = Vector2(-370, 85)
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_tbelj")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 32.0
+angular_velocity_min = -12.0
+angular_velocity_max = 12.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Background_Effect"]
+position = Vector2(-370, 85)
+amount = 4
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_8058g")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 32.0
+angular_velocity_min = -12.0
+angular_velocity_max = 12.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Background_Effect"]
+position = Vector2(-370, 85)
+amount = 4
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_hqbc1")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 48.0
+angular_velocity_min = -36.0
+angular_velocity_max = 36.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Background_Effect"]
+position = Vector2(-370, 85)
+amount = 4
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_tvcjq")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+gravity = Vector2(0, -10)
+initial_velocity_min = 20.0
+initial_velocity_max = 48.0
+angular_velocity_min = -36.0
+angular_velocity_max = 36.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="Node2D" type="Node2D" parent="Background_Effect"]
+position = Vector2(-236, -6)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background_Effect/Node2D"]
+position = Vector2(717, 173)
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_tbelj")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 32.0
+angular_velocity_min = -12.0
+angular_velocity_max = 12.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Background_Effect/Node2D"]
+position = Vector2(717, 173)
+amount = 4
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_8058g")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.0
+initial_velocity_max = 32.0
+angular_velocity_min = -12.0
+angular_velocity_max = 12.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Background_Effect/Node2D"]
+position = Vector2(717, 173)
+amount = 4
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_hqbc1")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 48.0
+angular_velocity_min = -36.0
+angular_velocity_max = 36.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Background_Effect/Node2D"]
+position = Vector2(608, 188)
+amount = 4
+lifetime = 9.0
+speed_scale = 0.3
+draw_order = 1
+texture = SubResource("AtlasTexture_tvcjq")
+emission_shape = 5
+emission_points = PackedVector2Array(240, 24, 240, 24)
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)
+direction = Vector2(-1, 0)
+gravity = Vector2(0, -10)
+initial_velocity_min = 20.0
+initial_velocity_max = 48.0
+angular_velocity_min = -36.0
+angular_velocity_max = 36.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
