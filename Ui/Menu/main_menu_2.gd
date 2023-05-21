@@ -27,6 +27,7 @@ func _ready():
 	
 	$Buttons/New_Game.connect("pressed",SceneManager.load_game_scene)
 	$Buttons/Tutorial.connect("pressed",SceneManager.load_tutorial_scene)
+	$Buttons/QuitButton.connect("pressed",on_quit)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -141,3 +142,19 @@ func open_score():
 	window_open = 3
 	$Window_pos/Window.visible = true
 	$Window_pos/Window.open_anim()
+	
+func quit_deny():
+	
+	$Click_Blocker.visible = false
+	$Click_Blocker.remove_child($Click_Blocker.get_child(0))
+	
+func on_quit():
+	
+	var p_pup= WindowManager.create_confirm_popup(Vector2(0,0),quit_confirm)
+	$Click_Blocker.add_child(p_pup)
+	p_pup.get_child(0).connect("close_done",quit_deny)
+	$Click_Blocker.visible = true
+	
+func quit_confirm():
+	
+	get_tree().quit()

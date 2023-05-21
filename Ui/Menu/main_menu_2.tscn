@@ -62,6 +62,8 @@ position = Vector2(7, 48)
 [node name="Node2D2" type="Node2D" parent="."]
 position = Vector2(175, 32)
 
+[node name="ppup_quit" type="Node2D" parent="."]
+
 [node name="Corner Butons" type="Node2D" parent="."]
 
 [node name="Buttons" type="Node2D" parent="."]
@@ -73,6 +75,16 @@ offset_bottom = 8.0
 focus_mode = 0
 theme = ExtResource("3_kfsy5")
 text = "New Game"
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+z_index = -7
+offset_left = -24.0
+offset_top = -56.0
+offset_right = 100.0
+offset_bottom = -13.0
+focus_mode = 0
+theme = ExtResource("3_kfsy5")
+text = "quit"
 
 [node name="Tutorial" type="Button" parent="Buttons"]
 offset_top = 40.0
@@ -237,6 +249,17 @@ offset_left = 0.0
 offset_top = -23.0
 offset_right = 100.0
 grow_horizontal = 1
+
+[node name="Click_Blocker" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 480.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Background_Effect" parent="." instance=ExtResource("8_i6r85")]
 z_index = -1
