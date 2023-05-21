@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gmf2gawl823v"]
 
 [ext_resource type="PackedScene" uid="uid://btfpaeecbeyu0" path="res://Ui/Menu/window.tscn" id="1_j2r7q"]
-[ext_resource type="PackedScene" uid="uid://drh8obwblovu3" path="res://Ui/Menu/end_window.tscn" id="2_gmcmi"]
+[ext_resource type="PackedScene" uid="uid://bllwpvrc52oim" path="res://Ui/Menu/credit_window_2.tscn" id="2_y72e8"]
 
 [node name="Protot_windows" type="Control"]
 layout_mode = 3
@@ -15,4 +15,4 @@ grow_vertical = 2
 offset_right = 347.0
 offset_bottom = 262.0
 
-[node name="End_Window" parent="Window" instance=ExtResource("2_gmcmi")]
+[node name="Credit_Window_2" parent="Window" instance=ExtResource("2_y72e8")]

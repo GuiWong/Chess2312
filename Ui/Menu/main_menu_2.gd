@@ -2,7 +2,8 @@ extends Node2D
 
 
 var option_scene =preload("res://Ui/Menu/option_window.tscn")
-var credit_scene =preload("res://Ui/Menu/credit_window.tscn")
+var credit_scene =preload("res://Ui/Menu/credit_window_2.tscn")
+#var credit_scene =preload("res://Ui/Menu/credit_window.tscn")
 var score_scene = preload("res://Ui/Menu/score_window.tscn")
 
 var window_open = 0	#1:setting 2:credit 3:score
