@@ -6,7 +6,7 @@ var default_keys = [KEY_ESCAPE,KEY_ENTER,KEY_SPACE,KEY_TAB]
 #var stored_keys = [KEY_ESCAPE,KEY_ENTER,KEY_SPACE,KEY_TAB]
 
 var speed_values = [0.34,0.5,1.0,2.0]
-var res_values = [" 480 x 270 " ," 960 x 540 " , "1440 x 810 "]
+var res_values = [" 480 x 270 " ," 960 x 540 " , "1440 x 810 " , "1920 x 1080" , "2400 x 1350"]
 
 
 # Called when the node enters the scene tree for the first time.
